@@ -46,7 +46,7 @@ pipeline {
                     sh '''
                     echo "project: $PROJECT"
                     
-                    echo "text: ${params.Subject Details}"
+                    echo "text: ${params.BIOGRAPHY}"
                     echo "toggle:${params.TOGGLE}"
                     echo "choice: ${params.CHOICE}"
                     echo "password:${params.PASSWORD}"
