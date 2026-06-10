@@ -43,20 +43,15 @@ pipeline {
         stage('param-check') {
             steps{
                 script{
-                 sh """
-                    echo "Hello, this is build"
-                    echo "Project: $PROJECT"
-                    echo "Hello ${params.PERSON}"
-
-                    echo "Biography: ${params.BIOGRAPHY}"
-
-                    echo "Toggle: ${params.TOGGLE}"
-
-                    echo "Choice: ${params.CHOICE}"
-
-                    echo "Password: ${params.PASSWORD}"
-                 """
-               }
+                    sh '''
+                    echo "project: $PROJECT"
+                    
+                    echo "text: ${params.Subject Details}"
+                    echo "toggle:${params.TOGGLE}"
+                    echo "choice: ${params.CHOICE}"
+                    echo "password:${params.PASSWORD}"
+                '''
+                }
             }
         }
     }
