@@ -43,7 +43,8 @@ pipeline {
         }
         stage('param-check') {
             steps{
-                sh '''
+                script{
+                    sh '''
                     echo "project: $PROJECT"
                     echo "checking parameters passed ${params.PERSON}" 
                     echo "text: ${params.Subject Details}"
@@ -51,6 +52,7 @@ pipeline {
                     echo "choice: ${params.CHOICE}"
                     echo "password:${params.PASSWORD}"
                 '''
+                }
             }
         }
     }
