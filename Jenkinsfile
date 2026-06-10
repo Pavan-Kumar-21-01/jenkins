@@ -28,7 +28,8 @@ pipeline {
                      withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws_cred', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                         sh """
                         aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com
-                        docker build -t expense/backend .           
+                        docker build -t expense/backend .    
+                        docker tag expense/backend:latest ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com/expense/backend:${appVersion}       
                         """
                     }
                 }
