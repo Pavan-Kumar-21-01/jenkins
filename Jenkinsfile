@@ -9,7 +9,7 @@ pipeline {
     options{
         timeout(time: 15, unit: 'MINUTES')
     }
-    parametes{
+    parameters{
         string(name: 'PERSON',defaultValue: 'Mr.G.Pavan Kumar', description: 'Author of this Jenkinsfile')
         text(name: 'Subject Details',defaultValue: 'Learning Devops and AWS')
         booleanParam(name: 'TOGGLE', defaultValue: 'true')
