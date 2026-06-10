@@ -26,7 +26,7 @@ pipeline {
             steps{
                 sh '''
                     echo "We are building a new project named: ${PROJECT} with component as ${COMPONENT}."
-                    echo 'And the Team-lead is $AUTHOR leading a team of $TEAM'
+                    echo "And the Team-lead is $AUTHOR leading a team of $TEAM"
                 '''
             }
         }
