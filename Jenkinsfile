@@ -13,7 +13,7 @@ pipeline {
         string(name: 'PERSON',defaultValue: 'Mr.G.Pavan Kumar', description: 'Author of this Jenkinsfile')
         text(name: 'Subject Details',defaultValue: 'Learning Devops and AWS')
         booleanParam(name: 'TOGGLE', defaultValue: 'true')
-        choice(name: 'CHOICE', choice: ['Dev','QA','Prod','Pre-Prod'])
+        choice(name: 'CHOICE', choices: ['Dev','QA','Prod','Pre-Prod'])
         password(name: 'PASSWORD',defaultValue: 'secret',description: 'Enter password')
 
     }
