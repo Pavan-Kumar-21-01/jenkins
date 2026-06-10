@@ -10,12 +10,11 @@ pipeline {
         timeout(time: 15, unit: 'MINUTES')
     }
     parameters{
-        string(name: 'PERSON', defaultValue: 'Mr.G.Pavan Kumar', description: 'Author of this Jenkinsfile')
-        text(name: 'Subject Details', defaultValue: 'Learning Devops and AWS')
-        booleanParam(name: 'TOGGLE', defaultValue: 'true')
-        choice(name: 'CHOICE', choices: ['Dev','QA','Prod','Pre-Prod'])
-        password(name: 'PASSWORD',defaultValue: 'secret',description: 'Enter password')
-
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
     stages{
         stage('one') {
@@ -44,15 +43,20 @@ pipeline {
         stage('param-check') {
             steps{
                 script{
-                    sh '''
-                    echo "project: $PROJECT"
-                    
-                    echo "text: ${params.Subject Details}"
-                    echo "toggle:${params.TOGGLE}"
-                    echo "choice: ${params.CHOICE}"
-                    echo "password:${params.PASSWORD}"
-                '''
-                }
+                 sh """
+                    echo "Hello, this is build"
+                    echo "Project: $PROJECT"
+                    echo "Hello ${params.PERSON}"
+
+                    echo "Biography: ${params.BIOGRAPHY}"
+
+                    echo "Toggle: ${params.TOGGLE}"
+
+                    echo "Choice: ${params.CHOICE}"
+
+                    echo "Password: ${params.PASSWORD}"
+                 """
+               }
             }
         }
     }
