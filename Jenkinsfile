@@ -46,7 +46,7 @@ pipeline {
                 script{
                     sh '''
                     echo "project: $PROJECT"
-                    echo "checking parameters passed ${params.PERSON}" 
+                    
                     echo "text: ${params.Subject Details}"
                     echo "toggle:${params.TOGGLE}"
                     echo "choice: ${params.CHOICE}"
