@@ -18,5 +18,14 @@ pipeline {
                 sh 'npm install'
             }
         }
+        stage('docker'){
+            steps{
+                sh """
+                    docker build -t pavankg2101/backend:${appVersion} .
+                    docker images
+                
+                """
+            }
+        }
     }
 }
