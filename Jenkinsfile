@@ -44,7 +44,7 @@ pipeline {
         stage('param-check') {
             steps{
                 sh '''
-                    echo "checking parameters passed: ${params.PERSON}" 
+                    echo "checking parameters passed ${params.PERSON}" 
                     echo "text: ${params.Subject Details}"
                     echo "toggle:${params.TOGGLE}"
                     echo "choice: ${params.CHOICE}"
