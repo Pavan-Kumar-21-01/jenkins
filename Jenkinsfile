@@ -21,8 +21,8 @@ pipeline {
         stage('docker'){
             steps{
                 sh """
-                    docker build -t pavankg2101/backend:${appVersion} .
-                    docker images
+                    sudo docker build -t pavankg2101/backend:${appVersion} .
+                    sudo docker images
                 
                 """
             }
