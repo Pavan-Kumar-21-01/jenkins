@@ -3,6 +3,9 @@ pipeline {
     options{
         timeout(time: 15, unit: 'MINUTES')
     }
+    environment{
+        ACC_ID = '945360925177'
+    }
     stages {
         stage('Read Version') {
             steps {
@@ -21,8 +24,7 @@ pipeline {
         stage('docker'){
             steps{
                 sh """
-                    docker build -t pavankg2101/backend:${appVersion} .
-                    docker images
+                    aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com
                 
                 """
             }
