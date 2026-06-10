@@ -54,5 +54,14 @@ pipeline {
                 }
             }
         }
+        stage('deploy') {
+            steps{
+                script{
+                    sh """
+                    echo "This is deploy: ${PROJECT}"
+                    """
+                }
+            }
+        }
     }
 }
