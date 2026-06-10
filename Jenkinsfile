@@ -8,7 +8,12 @@ pipeline {
         }
         stage('two') {
             steps{
-                sh "echo Running second stage...!"
+                sh '''
+                    echo "Second stage build starts"
+                    pwd
+                    ls -lrt
+                    
+                '''
             }
         }
     }
