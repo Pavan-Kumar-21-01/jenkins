@@ -43,14 +43,14 @@ pipeline {
         stage('param-check') {
             steps{
                 script{
-                    sh '''
+                    sh """
                     echo "project: $PROJECT"
                     
                     echo "text: ${params.BIOGRAPHY}"
                     echo "toggle:${params.TOGGLE}"
                     echo "choice: ${params.CHOICE}"
                     echo "password:${params.PASSWORD}"
-                '''
+                """
                 }
             }
         }
