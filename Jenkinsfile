@@ -13,10 +13,5 @@ pipeline {
                }
             }
         }
-        stage("git checkout"){
-            steps{
-                echo "Hello git"
-            }
-        }
     }
 }
